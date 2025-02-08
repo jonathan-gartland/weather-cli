@@ -4,6 +4,8 @@
   "description": "a demo app",
   "main": "index.js",
   "scripts": {
+    "start": "export API_KEY=8dae322cd00667e4add31949c24c8020  && npm run build && node dist/index.js",
+    "build": "tsc",
     "prepare": "husky",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
