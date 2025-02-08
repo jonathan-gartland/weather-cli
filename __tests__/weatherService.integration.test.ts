@@ -6,7 +6,7 @@ describe('WeatherService Integration Test', () => {
     const apiKey = process.env.WEATHER_API_KEY!;
     const weatherService = new WeatherService(apiKey);
 
-    // 04652 zip at end is Lubec, ME. using zip passes, using place name gives incorrect longitude of -0.918 not -67.03
+    // 04652 zip at end is ~Lubec, ME. using zip passes, using place name gives incorrect longitude of -0.918 not -67.03
     const locations = ['New York', '90210', 'Portland, ME', 'Boston', 'Machias, ME', '04101', 'Calais', 'Paris', 'Paris, TX', 'Paris, ME', 'Madison, WI', "35756", 'Anchorage', 'Honolulu, HI', '04652'];
 
     locations.forEach(location => {
