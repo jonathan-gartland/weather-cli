@@ -18,7 +18,7 @@ const argv = yargs(hideBin(process.argv))
     .argv as { _: string[], apiKey?: string };
 
 const apiKey = argv.apiKey || process.env.API_KEY;
-
+console.log('API_KEY:', apiKey);
 if (!apiKey) {
     console.error('Error: API key must be provided either as an argument or environment variable.');
     process.exit(1);
