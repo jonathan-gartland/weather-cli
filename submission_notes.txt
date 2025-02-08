@@ -4,7 +4,7 @@ and notes relating to implementing this solution that don't belong in a README.m
 I chose to do this with Typescript/Node after playing a bit with a Python stub and a Dart stub. I chose this tech stack
 because I am most comfortable with it and I wanted to get this done quickly. There are wrapper libraries already available in the NPM ecosystem for the
 OpenWeatherMap API that can be installed using a convenient package manager. I opted to use the library instead of writing
-the client myself to simplify the task and testing burden and save time. Since the task was focused on integration tests
+that part of the utility myself to simplify the task and testing burden and save time. Since the task was focused on integration tests
 this seemed prudent, as I needed to test the integrations of the library with my client code as part of implementing the solution.
 
 Given the instructions, I hard coded the country code "US" into the url for the API call to simplify the testing.
