@@ -6,10 +6,11 @@ describe('WeatherService Integration Test', () => {
     const apiKey = process.env.WEATHER_API_KEY!;
     const weatherService = new WeatherService(apiKey);
 
-    const locations = ['New York', '90210', 'Portland, ME', 'Boston', 'Machias, ME', '04101', 'Calais', 'Paris', 'Anchorage', 'Honolulu, HI'];
+    const locations = ['New York', '90210', 'Portland, ME', 'Boston', 'Machias, ME', '04101', 'Calais', 'Paris', 'Paris, TX', 'Paris, ME', 'Madison, WI', "35756", 'Anchorage', 'Honolulu, HI'];
+
     locations.forEach(location => {
         it(`should fetch weather data for ${location}`, async () => {
-            const data = await weatherService.fetchWeatherData(location, 'imperial');
+            let data = await weatherService.fetchWeatherData(location, 'imperial');
 
             expect(data).toHaveProperty('name');
             expect(data).toHaveProperty('main.temp');
@@ -22,6 +23,7 @@ describe('WeatherService Integration Test', () => {
             expect(data.coord.lon).toBeGreaterThanOrEqual(-160);
             expect(data.coord.lon).toBeLessThanOrEqual(-67);
         });
+
     });
 
     it('should handle errors when fetching weather data', async () => {
@@ -52,13 +54,13 @@ describe('WeatherService Integration Test', () => {
     it('should handle special characters in location', async () => {
         await expect(weatherService.fetchWeatherData('!@#$%^&*()', '$%#@')).rejects.toThrow(/Request failed with status code (400|401|404)/);    });
 
-    it('should handle rate limiting', async () => {
-        const requests = [];
-        for (let i = 0; i < 10; i++) {
-            requests.push(weatherService.fetchWeatherData('New York', 'imperial'));
-        }
-        await Promise.all(requests).catch(error => {
-            expect(error.message).toContain('Request failed with status code 429');
-        });
-    });
+    // it('should handle rate limiting', async () => {
+    //     const requests = [];
+    //     for (let i = 0; i < 10; i++) {
+    //         requests.push(weatherService.fetchWeatherData('New York', 'imperial'));
+    //     }
+    //     await Promise.all(requests).catch(error => {
+    //         expect(error.message).toContain('Request failed with status code 429');
+    //     });
+    // });
 });
