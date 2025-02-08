@@ -1,24 +1,21 @@
-#!/usr/bin/env node
-
-import { WeatherService } from './util/weather';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+import { WeatherService } from "./util/weather";
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
 const argv = yargs(hideBin(process.argv))
-    .usage('Usage: $0 <locations...> [options]')
-    .demandCommand(1, 'You need to provide at least one location')
-    .option('apiKey', {
-        alias: 'k',
-        type: 'string',
-        description: 'API key for OpenWeatherMap',
-        demandOption: false
-    })
-    .help()
-    .alias('help', 'h')
-    .argv as { _: string[], apiKey?: string };
+  .usage('Usage: $0 <locations...> [options]')
+  .demandCommand(1, 'You need to provide at least one location')
+  .option('api_key', {
+      alias: 'k',
+      type: 'string',
+      description: 'API key for the weather service',
+  })
+  .help()
+  .alias('help', 'h')
+  .argv as { _: string[], api_key?: string };
 
-const apiKey = argv.apiKey || process.env.API_KEY;
-console.log('API_KEY:', apiKey);
+const apiKey = argv.api_key || process.env.WEATHER_API_KEY;
+
 if (!apiKey) {
     console.error('Error: API key must be provided either as an argument or environment variable.');
     process.exit(1);

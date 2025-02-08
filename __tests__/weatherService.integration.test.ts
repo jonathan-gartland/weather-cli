@@ -1,7 +1,10 @@
 import { WeatherService } from '../src/util/weather';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 describe('WeatherService Integration Test', () => {
-    const apiKey = process.env.API_KEY || 'your_actual_api_key';
+    const apiKey = process.env.WEATHER_API_KEY!;
     const weatherService = new WeatherService(apiKey);
 
     const locations = ['New York', '90210', 'Portland, ME', 'Boston', 'Machias, ME', '04101', 'Calais', 'Paris', 'Anchorage', 'Honolulu, HI'];
