@@ -32,7 +32,7 @@ async function getWeather(location: string) {
         console.log(`Feels like: ${data.main.feels_like}°C`);
         console.log(`Humidity: ${data.main.humidity}%`);
         console.log(`Pressure: ${data.main.pressure}`);
-        console.log(`Wind Speed: ${data.wind.speed}m/s\n---------------\n`);
+        console.log(`Wind Speed: ${data.wind.speed}m/s`);
     } catch (error) {
         console.error('Error fetching weather data:', (error as Error).message);
     }
