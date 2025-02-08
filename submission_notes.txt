@@ -20,5 +20,5 @@ adds a good portion of Canada and Mexico to the physical range, but since we alr
 There are some negative tests for bad input, such as a city that doesn't exist or garbage input.
 
 There are some tests that I started implementing, but realized are really out of scope for this task such as testing the rate limits.
-It would be trivial to build out more robust comprehensive tests for this client if necessary.
+It would be trivial to build out more robust comprehensive tests for this client if necessary by expanding on these commented out tests.
 
