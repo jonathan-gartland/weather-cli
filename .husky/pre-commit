@@ -1,5 +1,6 @@
+# .husky/pre-commit
 #!/usr/bin/env sh
 . "$(dirname "$0")/h"
 
 npx lint-staged
-# npm test
+npm test
