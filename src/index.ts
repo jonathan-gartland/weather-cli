@@ -25,7 +25,7 @@ const weatherService = new WeatherService(apiKey);
 
 async function getWeather(location: string) {
     try {
-        const data = await weatherService.fetchWeatherData(location);
+        const data = await weatherService.fetchWeatherData(location, 'imperial');
         console.log(`Weather data for ${data.name}:`);
         console.log(`Temperature: ${data.main.temp}°C`);
         console.log(`Description: ${data.weather[0].description}`);
