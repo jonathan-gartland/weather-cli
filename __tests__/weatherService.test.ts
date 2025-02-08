@@ -29,7 +29,7 @@ describe("WeatherService", () => {
   });
 
   it("should fetch weather data for New York", async () => {
-    const data = await weatherService.fetchWeatherData("New York");
+    const data = await weatherService.fetchWeatherData("New York", "imperial");
     expect(data).toEqual(mockWeatherData);
     expect(mockedAxios.get).toHaveBeenCalledWith(
       `https://api.openweathermap.org/data/2.5/weather?q=New York,US&appid=${apiKey}&units=imperial`
@@ -37,7 +37,7 @@ describe("WeatherService", () => {
   });
 
   it("should fetch weather data for 90210", async () => {
-    const data = await weatherService.fetchWeatherData("90210");
+    const data = await weatherService.fetchWeatherData("90210", "imperial");
     expect(data).toEqual(mockWeatherData);
     expect(mockedAxios.get).toHaveBeenCalledWith(
       `https://api.openweathermap.org/data/2.5/weather?q=90210,US&appid=${apiKey}&units=imperial`
@@ -45,7 +45,7 @@ describe("WeatherService", () => {
   });
 
   it("should fetch weather data for Portland, ME", async () => {
-    const data = await weatherService.fetchWeatherData("Portland, ME");
+    const data = await weatherService.fetchWeatherData("Portland, ME", "imperial");
     expect(data).toEqual(mockWeatherData);
     expect(mockedAxios.get).toHaveBeenCalledWith(
       `https://api.openweathermap.org/data/2.5/weather?q=Portland, ME,US&appid=${apiKey}&units=imperial`
@@ -53,7 +53,7 @@ describe("WeatherService", () => {
   });
 
   it("should fetch weather data for Boston", async () => {
-    const data = await weatherService.fetchWeatherData("Boston");
+    const data = await weatherService.fetchWeatherData("Boston", "imperial");
     expect(data).toEqual(mockWeatherData);
     expect(mockedAxios.get).toHaveBeenCalledWith(
       `https://api.openweathermap.org/data/2.5/weather?q=Boston,US&appid=${apiKey}&units=imperial`
@@ -61,7 +61,7 @@ describe("WeatherService", () => {
   });
 
   it("should fetch weather data for Lubec, ME", async () => {
-    const data = await weatherService.fetchWeatherData("Lubec, ME");
+    const data = await weatherService.fetchWeatherData("Lubec, ME", "imperial");
     expect(data).toEqual(mockWeatherData);
     expect(mockedAxios.get).toHaveBeenCalledWith(
       `https://api.openweathermap.org/data/2.5/weather?q=Lubec, ME,US&appid=${apiKey}&units=imperial`
@@ -69,7 +69,7 @@ describe("WeatherService", () => {
   });
 
   it("should fetch weather data for Machias, ME", async () => {
-    const data = await weatherService.fetchWeatherData("Machias, ME");
+    const data = await weatherService.fetchWeatherData("Machias, ME", "imperial");
     expect(data).toEqual(mockWeatherData);
     expect(mockedAxios.get).toHaveBeenCalledWith(
       `https://api.openweathermap.org/data/2.5/weather?q=Machias, ME,US&appid=${apiKey}&units=imperial`

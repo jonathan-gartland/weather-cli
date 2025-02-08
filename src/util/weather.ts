@@ -23,7 +23,7 @@ export class WeatherService {
     this.apiKey = apiKey;
   }
 
-  async fetchWeatherData(city: string): Promise<WeatherData> {
+  async fetchWeatherData(city: string, units: string): Promise<WeatherData> {
     const response = await axios.get<WeatherData>(
       `https://api.openweathermap.org/data/2.5/weather?q=${city},US&appid=${this.apiKey}&units=imperial`
     );
