@@ -4,7 +4,8 @@
 # weather-cli demo app
 Built with these technologies:  
 ![Axios Badge](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=fff&style=for-the-badge) 
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white) 
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) 
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white) 
 ![NodeJS](https://img.shields.io/badge/-Node.js-%23339933?&style=for-the-badge&logo=npm&logoColor=white)  
   
@@ -35,10 +36,7 @@ $> npm run start -- --api_key <YOUR_API_KEY> "New York" "Portland, ME" "Honolulu
 ```
 
 
-### Here is an example running a test for New York, NY:  
-
-![Image 1](weath-cli-command-npm.jpg)  
-### And here is the output:  
+### Here is an example running a test for New York, NY:
 
 ![Image 2](weath-cli-output-example.jpg)
   
